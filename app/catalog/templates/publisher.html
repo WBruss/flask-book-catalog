@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <h4>Books by {{ publisher.name }}</h4>
+        <ol>
+            {% for book in publisher_books %}
+                <li type="1">
+                    {{ book.title }} by {{ book.author }}
+                </li>
+            {% endfor %}
+        </ol>
+        <span class="label label-success"><a href="{{ url_for('main.create_book', pub_id=publisher.id) }}"> create </a> </span>
+    </div>
+{% endblock %}
